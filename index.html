@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio website</title>
+
+    <!---box icon-->
+    <!--custom css-->
+    <link rel="stylesheet" href="STYLE.CSS">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+                                       
+
+</head>
+<body>
+    <!--header design-->
+    <div id="header">
+        <div class="container">
+            <nav>
+            <img src="PORTFOLIO-logos_transparent.png" class="logo">
+            <ul id="sidemenu">
+          <li> <a href="#header">Home</a></li> 
+            <li><a href="#about">About</a></li>
+           <li> <a href="#portfolio">Portfolio</a></li>
+           <li> <a href="#contact">Contact</a></li>
+           <i class='fa fa-times' onclick="closemenu()"></i> 
+        </ul>
+        <i class='fa fa-bars' onclick="openmenu()"></i>   
+        </nav>
+        
+        <div class="header-text">
+        <p>JAVA DEVELOPER</p>
+        <h1>Hi, I'm <span>Akanksha khot</span><br> from Navi Mumbai</h1>
+    
+    </div>
+        </div>
+    </div>
+    <!-----about--------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="about_img.png" >
+                </div>
+                    <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, amet repellat? Iste perferendis ducimus, odio minima cumque laboriosam a saepe in aspernatur illum reprehenderit ex quae fugit. Libero, laborum adipisci!</p>
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links"onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills"><ul>
+                        <li><span>Web Development</span><br> HTML CSS JAVASCRIPT</li>
+                        <li><span>Backend Development</span><br>JAVA MYSQL</li>
+                        </ul></div>
+                            <div class="tab-contents" id="Education"><ul>
+                                <li><span>BE in Information Technology</span><br>Terna Engineering College completed</li>
+                                <li><span>SSC</span><br>st.Joseph's Junior college 80.77%</li>
+                                <li><span>HSC</span><br>St.Joseph's High School 88.00%</li>
+                                </ul></div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+<!-------------project------------------------>
+<div id="portfolio">
+    <div class="container">
+    <h1 class="sub=title">My projects</h1>
+    <h1 class="project-list">
+        <div class="project">
+            <h3>Music Player -python</h3>
+            <h3>Hotel management System -java</h3>
+            <h3>Spam mail Detection -Machine Learning</h3>
+            <h3>Home Security System -IOT</h3>
+            
+            <br>
+            
+        </div>
+        
+            
+        </div>
+    </h1>
+    </div>
+</div>
+<!-------------contact------------------------>
+<div id="contact">  <!---will go to contact page  -->
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class='fa fa-paper-plane' ></i> khotakanksha009@gmailcom</p>
+                <p><i class='fa fa-phone-square' ></i> 7738488541</p>
+                <div class="social-icons">
+                <a href="https://www.linkedin.com/in/akanksha-khot-01a29a217/"><i class='fa fa-linkedin' ></i></a>
+                <a href="https://github.com/akankshakhot"><i class='fa fa-github'></i></a>
+                <a href="https://twitter.com/khotakanksha_?t=Sdnjp0Ab2MBJQvps5acX6g&s=09"><i class='fa fa-twitter' ></i></a>
+                <a href="https://instagram.com/akankshakhot_?igshid=MzNlNGNkZWQ4Mg=="><i class='fa fa-instagram' ></i></a>
+                
+            </div>
+            <a href="Downloads/" download="file_name" ><button class="btn btn2"> My cv</button></a>
+             </div>
+            <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="text" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>@ Akanksha khot<i class='fa fa-heart'></i></p>
+    </div>
+</div>
+
+
+
+
+
+
+        <script>
+            var tablinks =document.getElementsByClassName("tab-links");
+            var tabcontents =document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");  //when clicked on the tab the content get diappear and the and the line below the tab
+                }
+            
+            for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link")  //displaying the active color link below tab(skills proj edu)
+                document.getElementById(tabname).classList.add("active-tab")  //once clicked on skills it will go in the tabname and the line and content will be displayed
+            }
+        </script>
+        <script>
+            var sidemenu =document.getElementById("sidemenu");
+
+            function openmenu(){
+                sidemenu.style.right="0";
+
+            }
+            function closemenu(){
+                sidemenu.style.right="-200px";
+
+            }
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzGMhgiDRo4DSrDv4tB0lNq2X80B_HGfqcHf9P6wFcTajP6F0_oT0omP5l-HzFZrVz10A/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg=document.getElementById("msg")
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML="Message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML=""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    
+
+
+    
+</body>
+</html>
